@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm thành phố</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Thêm thành phố</h1>
+<form th:action="@{/create-city}" method="post" th:object="${city}">
+    <table class="table__common">
+        <tr>
+            <td>Tên thành phố</td>
+            <td>
+                <input type="text" th:field="*{name}">
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: darkred">abc</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Quốc gia</td>
+            <td>
+                <select th:field="*{country}">
+                    <option th:each="co: ${countries}" th:value="${co.id}" th:text="${co.name}" ></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Diện tích</td>
+            <td>
+                <input type="text" th:field="*{area}">
+                <p th:if="${#fields.hasErrors('area')}" th:errors="*{area}" style="color: darkred">abc</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Dân số</td>
+            <td>
+                <input type="text" th:field="*{population}">
+                <p th:if="${#fields.hasErrors('population')}" th:errors="*{population}" style="color: darkred">abc</p>
+            </td>
+        </tr>
+        <tr>
+            <td>GDP</td>
+            <td>
+                <input type="text" th:field="*{gdp}">
+                <p th:if="${#fields.hasErrors('gdp')}" th:errors="*{gdp}" style="color: darkred">abc</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Giới thiệu</td>
+            <td>
+                <textarea cols="30" rows="10" th:field="*{description}"></textarea>
+                <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color: darkred">abc</p>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Nhập thành phố"></td>
+            <td><a href="/">Thoát</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

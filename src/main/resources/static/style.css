@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.table__common {
+    border: 1px solid #000;
+    width: 100%;
+}
+
+form {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+table tr input {
+    width: 100%;
+    font-size: 16px;
+    display: block;
+    border: 0;
+    cursor: pointer;
+}
+
+table tr td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table tr th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table tr {
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+
